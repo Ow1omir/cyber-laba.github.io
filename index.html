@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		body {
+			height: 100%; width: 100%;
+			display: flex; flex-direction: column;
+			align-items: center; justify-items: center;
+			background: #ccc;
+		}
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		input {
+			font-size: 30px; padding: 15px; border: 1px solid #ccc;
+			min-width: 300px; max-width: 400px; width: 90%;
+		}
+		button {
+			font-size: 20px; padding: 15px; border: 1px solid #ccf;
+			min-width: 250px; max-width: 300px; border-radius: 10px;
+		}
+		button:hover {
+			background: #cfc;
+		}
+		input:focus {outline: none;}
+		.placeholder {
+			flex: 0;
+		}
+
+	</style>
+	<title>PasswdGenerator</title>
+</head>
+<body>
+	<div class="placeholder"></div>
+	<input type="text" placeholder="passwd" maxlength="8" readonly>
+	<button class="btn">Generate</button>
+	<div class="placeholder"></div>
+
+	<!-- весь код генерации псевдо случайного пароля на основе A = ["a", "b", "c", "d", "e"]; и длины L = 8-->
+	<script>
+		const abc = ["a", "b", "c", "d", "e"];
+		const length = 8;
+		var passwd;
+		const button = document.querySelector("button.btn");
+		const input = document.querySelector("input")
+
+		button.addEventListener("click", () => {
+			input.value = ''
+			for (var i = 1; i <= length; i++) {
+				var rndmNum = Math.floor(Math.random() * 5)
+				input.value += abc[rndmNum]
+			}
+		});
+	</script>
+</body>
+</html>
