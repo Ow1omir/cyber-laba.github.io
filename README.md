@@ -1,3 +1,4 @@
+# paswword generator
 
 Little password generator for college
 「　[Preview](https://ow1omir.github.io/cyber-laba.github.io/)　」
